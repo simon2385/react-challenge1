@@ -1,0 +1,9 @@
+.header-container {
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.header-title {
+  color: rgb(74, 74, 74);
+}
