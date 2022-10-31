@@ -19,23 +19,23 @@ function App() {
     setShowCountryCard(Object.keys(dataCountry).length === 0 ? false : true);
   }, [dataCountry]);
 
-  console.log(dataCountry);
-  console.log(showCountryCard);
-
   return (
     <Card>
-      <Header title={title} />
-      <InputSearchCountry
-        onEnteredCountry={setEnteredCountry}
-        enteredCountry={enteredCountry}
-        errorFetch={errorFetch}
-        onDataCountry={setDataCountry}
-        onErrorFetch={setErrorFetch}
-      />
-      <CountryDataCard
-        dataCountry={dataCountry}
-        showCountryCard={showCountryCard}
-      />
+        <Header title={title} />
+        <InputSearchCountry
+          onEnteredCountry={setEnteredCountry}
+          enteredCountry={enteredCountry}
+          errorFetch={errorFetch}
+          onDataCountry={setDataCountry}
+          onErrorFetch={setErrorFetch}
+        />
+        {!errorFetch && (
+          <CountryDataCard
+            dataCountry={dataCountry}
+            showCountryCard={showCountryCard}
+            errorFetch={errorFetch}
+          />
+        )}
     </Card>
   );
 }

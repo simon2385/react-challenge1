@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './CountryDataCard.module.css';
 
-const CountryDataCard = ({ dataCountry, showCountryCard }) => {
+const CountryDataCard = ({ dataCountry, showCountryCard, errorFetch }) => {
   const country = {
     flag: dataCountry.flags?.png,
     name: dataCountry.name?.common,

@@ -32,16 +32,13 @@ const useSearchCountry = ({ country }) => {
         const response = await fetch(
           `https://restcountries.com/v3.1/name/${country}`
         );
-
-        /* if (!response.ok) {
+        if (!response.ok) {
           dispatch({ type: 'FETCH ERROR' });
           return;
-        } */
-
+        }
           const data = await response.json();
           console.log(data);
           dispatch({ type: 'FETCH SUCCES', payload: data });
-
       } catch (err) {
         console.error(err);
       }
